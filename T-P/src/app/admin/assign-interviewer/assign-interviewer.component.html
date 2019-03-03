@@ -1,0 +1,69 @@
+<div class="row mx-auto">
+<div class="col-3 assign">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let job of TBA" (click)="showStatus(job)">
+      {{job.j_code}}
+    </li>
+  </ul>
+</div>
+
+<div [hidden]="!displayAssign">
+
+  <div class="container border border-secondary rounded w-100 h-100">
+    <div class="row mx-auto">
+      <div class="col-12">
+        <h1>Assign Interviewer</h1>
+        <br>
+        <h3>{{jobCode}}</h3>
+        <form [formGroup]="assignInterviewer" (ngSubmit)= "onSubmit()">
+  
+          <div class="form-group">
+            <label for="candidate">Select Candidate:</label>
+            <select class="form-control" formControlName="candidateEmail">
+              <option [value]="candidate" *ngFor="let candidate of candidates" >
+                {{candidate}}
+              </option>
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <label for="interviewer">Select Interviewer:</label>
+            <select class="form-control" formControlName="interviewerEmail">
+              <option [value]="interviewer.email" *ngFor="let interviewer of interviewers" >
+                  {{interviewer.name}}------{{interviewer.email}}  
+              </option>
+            </select>
+          </div>
+  
+          
+  
+          <div class="form-group">
+            <label for="role">Schedule:</label>
+            <div class="clearfix">
+              <div class="form-group col-6 float-left">
+                <label>Select Date</label>
+                <input class="form-control calendar" type="date" formControlName="date">
+              </div>
+              <!-- <div class=" form-group col-6 float-right">
+                <label>Select Time </label>
+                <input class="form-control clock" type="time" formControlName="time">
+              </div> -->
+              <div class="form-group col-6 float-right">
+                <label for="role">Slot:</label>
+                <select name="" id="" class="form-control" formControlName="time">
+                <option *ngFor="let slot of interviewSlots" [value]="slot">{{slot}}</option>
+              </select>
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group text-center">
+            <button type="submit" [disabled]="!assignInterviewer.valid" class="btn btn-success mt-2 mb-2 ">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+

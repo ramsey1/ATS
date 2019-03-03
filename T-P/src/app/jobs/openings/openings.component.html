@@ -1,0 +1,92 @@
+<div class="row-mx-auto mt-5">
+
+  <div class="col-3">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let job of jobs" (click)="showJobs(job)">
+        {{job.job_profile}}
+      </li>
+    </ul>
+  </div>
+
+  <div class="pl-5">
+    <div [hidden]="!displayJobs">
+      <div class="container col-6 border border-secondary rounded">
+        <div class="text-justify">
+          <h1>{{job.job_profile}}</h1>
+        </div>
+        <table class="table table-borderless">
+          <tr>
+            <td>
+              <div class="text-justify">
+                <label for="jobDesc">
+                  <div class="badge  text-wrap" style="font-size: 20px !important;">Description</div>
+                </label>
+              </div>
+            </td>
+            <td>{{job.jod_description}}</td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="text-justify">
+                <label for="enrollment">
+                  <div class="badge text-wrap" style="font-size: 20px !important;">Enrollment</div>
+                </label>
+              </div>
+            </td>
+            <td>{{job.enrollment_type}}</td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="text-justify">
+                <label for="educationReq">
+                  <div class="badge  text-wrap" style="font-size: 20px !important;">Degree
+                  </div>
+                </label>
+              </div>
+            </td>
+            <td>{{job.educational_req}}</td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="text-justify">
+                <label for="location">
+                  <div class="badge  text-wrap " style="font-size: 20px !important;">Location</div>
+                </label>
+              </div>
+            </td>
+            <td>{{job.job_location}}</td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="text-justify">
+                <label for="skillsReq">
+                  <div class="badge  text-wrap" style="font-size: 20px !important;">Skills Req</div>
+                </label>
+              </div>
+            </td>
+            <td>{{job.skills_req}}</td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="text-justify">
+                <label for="vacancies">
+                  <div class="badge  text-wrap" style="font-size: 20px !important;">Vacancies</div>
+                </label>
+              </div>
+            </td>
+            <td>{{job.vacancies}}</td>
+          </tr>
+        </table>
+
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-secondary btn-lg mt-2" (click)="apply(job)">Apply</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

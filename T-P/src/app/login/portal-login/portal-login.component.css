@@ -1,0 +1,15 @@
+.container h1{
+    text-align: center;
+}
+
+input{
+    align-self: auto;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center
+}
+
+label{
+    display: block;
+}

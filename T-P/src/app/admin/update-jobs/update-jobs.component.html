@@ -1,0 +1,53 @@
+<div class="row-mx-auto">
+<div class="col-3">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let job of jobs" (click)="updateJob(job)">
+        {{job.job_profile}}
+      </li>
+    </ul>
+  </div>
+
+<!-- 
+  <div [hidden]="!displayform">
+      <div class="container border border-secondary rounded  h-100 w-100">
+          <div class="row mx-auto mr-5">
+            <div class="col-12">
+              <h1>Post a Job</h1>
+              <br>
+              <form [formGroup]="updateJobs" (ngSubmit)="onSubmit()">
+         -->
+                  <!-- <div class="form-group">
+                      <label for="jobCode">Job Code:</label>
+                      <input type="text" formControlName="jobCode" class="form-control" id="jobCode" placeholder="Enter Job Code" name="jobCode">
+                    </div>
+        
+        
+                    <div class="form-group">
+                      <label for="vacancies">Vacancies:</label>
+                      <input type="number" formControlName="vacancies" class="form-control" id="vacancies" placeholder="Enter Job vacancies" name="vacancies">
+                    </div>
+        
+                    <div class="form-group">
+                      <label for="baseSal">Base Salary:</label>
+                      <input type="text" formControlName="baseSal" class="form-control" id="baseSal" placeholder="Enter Base Salary" name="baseSal">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="isActive">:</label>
+                        <input type="text" formControlName="baseSal" class="form-control" id="baseSal" placeholder="Enter Base Salary" name="baseSal">
+                      </div>
+  
+
+         -->
+                   
+                <!-- <div class="form-group text-center">
+                  <button type="submit" [disabled]="!postJobs.valid" class="btn btn-success mt-2 mb-2 ">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+  </div>
+ -->
+</div>
